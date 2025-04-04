@@ -57,6 +57,7 @@ async def deleteProduct(product_id : int):
     session.delete(product)
     session.commit()
 
+
     return {"message" : "product successfully deleted"}
 
 @product_routes.patch('/private/{product_id}/update',dependencies=[Depends(verify_jwt_admin)])
